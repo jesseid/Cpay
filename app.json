@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Cpay",
-    "slug": "Cpay",
+    "slug": "cpay",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -25,10 +25,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.cpay.sg.cpay"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "98b5ccad-8812-4af1-82af-f354e50657db"
+      }
+    },
+    "owner": "cpay.sg"
   }
 }
