@@ -1,33 +1,34 @@
 import * as WebBrowser from 'expo-web-browser';
-import { StyleSheet, TouchableOpacity, Text, View } from 'react-native';
-
-import { MonoText } from './StyledText';
+import { StyleSheet, TouchableOpacity, Text, View, Image } from 'react-native';
+import Colors from '../constants/Colors';
+import { CpayIcon } from './CpayIcon';
+import { useTheme } from './theme';
 
 export default function EditScreenInfo({ path }: { path: string }) {
+  const {colors} = useTheme()
+
   return (
-    <View>
+    <View style = {{backgroundColor:colors.brandingColor, borderRadius:30, paddingTop: 10, padding: 10, position:'absolute', bottom:-20}}>
+      <Text
+          style={[styles.getStartedText, {marginTop:50,}]}>
+          Payment List
+        </Text>
       <View style={styles.getStartedContainer}>
-        <Text
-          style={styles.getStartedText}>
-          Open up the code for this screen:
-        </Text>
 
-        <View
-          style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
-          <MonoText>{path}</MonoText>
-        </View>
+        <CpayIcon name='credit-card' color='#00C603' type='entypo' title={'Credit'} />
+        <CpayIcon name='money-bill' color='#0C3BF3' type='font-awesome-5' title={'Bill'} />
+        <CpayIcon name='local-grocery-store' color='#EC01E7' type='material' title={'Merchant'} />
+        <CpayIcon name='more' color='#6802ED' type='material-community' title={'More'} />
 
-        <Text
-          style={styles.getStartedText}>
-          Change any of the text, save the file, and your app will automatically update.
-        </Text>
       </View>
-
+      <Text
+          style={styles.getStartedText}>
+          Promo & Discount
+        </Text>
+      
       <View style={styles.helpContainer}>
         <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-          <Text style={styles.helpLinkText} >
-            Tap here if your app doesn't automatically update after making changes
-          </Text>
+        <View style={styles.getStartedContainer}><Image source={require('../assets/images/Card.png')} style={{width:300,}}/></View>
         </TouchableOpacity>
       </View>
     </View>
@@ -43,7 +44,10 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
   getStartedContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
+    marginHorizontal: 40,
+    marginVertical: 10,
+    flexDirection: 'row',
+    backgroundColor: Colors.light.background
   },
   homeScreenFilename: {
     marginVertical: 7,
@@ -55,11 +59,13 @@ const styles = StyleSheet.create({
   getStartedText: {
     fontSize: 17,
     lineHeight: 24,
-    textAlign: 'center',
+    textAlign: 'left',
+    fontWeight: 'bold',
+    marginTop: 20,
+    marginVertical: 10,
   },
   helpContainer: {
     marginTop: 15,
-    marginHorizontal: 20,
     alignItems: 'center',
   },
   helpLink: {
