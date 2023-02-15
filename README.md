@@ -11,7 +11,7 @@ npx expo start
 Build:
 ```
 cd ./Cpay
-npx expo log in
+npx expo log in # log in your expo account
 npm install -g eas-cli
 eas build
 ```
