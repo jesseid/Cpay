@@ -5,7 +5,7 @@ Run:
 ```
 git clone https://github.com/stark-eth/Cpay/
 cd ./Cpay
-npx expo start
+npx expo start # start in expo
 ```
 
 Build:
