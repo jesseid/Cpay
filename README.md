@@ -10,6 +10,7 @@ npx expo start
 
 Build:
 ```
+cd ./Cpay
 npm install -g eas-cli
 eas build
 ```
