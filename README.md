@@ -1,5 +1,5 @@
 # Cpay
-A cryptocurrency wallet supporting third-party sdk access
+A cryptocurrency wallet supporting third-party application access
 
 Run:
 ```
