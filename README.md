@@ -8,6 +8,9 @@ cd ./Cpay
 npx expo start # start in expo
 ```
 
+Run test:
+`# todo`
+
 Build:
 ```
 cd ./Cpay
@@ -15,3 +18,4 @@ npx expo log in # log in your expo account
 npm install -g eas-cli
 eas build
 ```
+
