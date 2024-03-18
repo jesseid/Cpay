@@ -1,0 +1,45 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Metadata {
+  uri     String
+  ai_summary_en   String?
+  ai_summary_zh   String?
+  ai_summary_zhtw   String?
+  ai_summary_ja   String?
+  ai_score     Int?
+  ai_score_reason String?
+  // Expected JSON structure for the image_dimensions field:
+  // {
+  //   "<uri>": {
+  //      "width": 123,
+  //      "height": 123
+  //   },
+  //   ...
+  // }
+  image_dimensions Json?
+  // Expected JSON structure for the translation field:
+  // {
+  //   "zh": {
+  //     "title": "string",
+  //     "content": "string",
+  //   },
+  //   "jp": {
+  //     "title": "string",
+  //     "content": "string",
+  //   },
+  //   ...
+  // } 
+  ai_translation   Json?
+  @@id([uri])
+  @@index([uri])
+}
